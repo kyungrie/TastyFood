@@ -13,16 +13,16 @@
                 <th>isi berita</th>
                 <th>action</th>
             </thead>
-            @foreach ($news as $n )
+            @foreach ($index as $n )
             <tbody>
-                <td>{{ $n->newsid }}</td>
+                <td>{{ $n->id }}</td>
                 <td>{{ $n->picture }}</td>
                 <td>{{ $n->title }}</td>
                 <td>{{ $n->newscontent }}</td>
                 <td>
-                    <a href="/admin/news/edit{{ $n->newsid }}">Edit</a>
+                    <a href="/admin/news/edit{{ $n->id }}">Edit</a>
                     |
-                    <a href="/admin/news/delete{{ $p->newsid }}">Delete</a>
+                    <a href="/admin/news/delete{{ $n->id }}">Delete</a>
                 </td>
             </tbody>
             @endforeach

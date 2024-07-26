@@ -10,6 +10,6 @@ class NewsController extends Controller
     public function index(){
         $news = DB::table('news')->get();
 
-        return view('admin.news.index',['news'=>$news]);
+        return view('admin.news.index',['index'=>$news]);
     }
 }
