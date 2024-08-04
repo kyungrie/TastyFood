@@ -24,3 +24,7 @@ Route::get('/contact', function () {
 });
 
 Route::get('/admin/news', [NewsController::class,'index']);
+
+Route::post('/admin/news/create', 'NewsController@insert');
+
+

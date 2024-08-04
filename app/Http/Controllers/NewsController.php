@@ -12,4 +12,14 @@ class NewsController extends Controller
 
         return view('admin.news.index',['index'=>$news]);
     }
+
+    public function insert(Request $request){
+        DB::table('news')->insert([
+            'title'=> $request->title,
+            'picture'=> $request->picture,
+            'newscontent'=> $request->newscontent,
+        ]);
+        return redirect('/admin/news');
+    }
+
 }
