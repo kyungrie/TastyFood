@@ -1,0 +1,16 @@
+{
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "watch": "tailwindcss -i ./resources/css/app.css -o ./public/css/app.css --watch",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.19",
+        "axios": "^1.6.4",
+        "laravel-vite-plugin": "^1.0",
+        "postcss": "^8.4.40",
+        "tailwindcss": "^3.4.7",
+        "vite": "^5.0"
+    }
+}
