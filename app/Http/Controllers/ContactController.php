@@ -12,7 +12,7 @@ class ContactController extends Controller
 {
     public function index()
     {
-        $contact = DB::table('contact')->get();
+        $contact = DB::table('contact')->paginate(8);
 
         return view('admin.contact.index', ['index' => $contact]);
     }

@@ -22,15 +22,18 @@
                         src="{{ asset('gallery-picture/' . $g->picture) }}"></td>
                 <td class="border border-black">{{ $g->title }}</td>
                 <td class="border border-black">
-                    <a class="px-5 py-1 bg-yellow-400 rounded-xl"
+                    <a class="px-5 py-1 text-xl bg-yellow-400 rounded-xl"
                         href="/admin/gallery/edit?id={{ $g->id }}">Update</a>
                     <br>
                     <br>
-                    <a class="px-5 py-1 bg-red-600 rounded-xl"
+                    <a class="px-5 py-1 text-xl bg-red-600 rounded-xl"
                         href="/admin/gallery/delete/{{ $g->id }}" onclick="return confirm('Are you sure want to delete this item?')">Delete</a>
                 </td>
             </tbody>
         @endforeach
+        <div class="m-2">
+            {{ $index->links() }}
+        </div>
     </table>
 </section>
 <x-footer></x-footer>

@@ -12,8 +12,3 @@
     <input class="py-2 font-bold text-center text-white bg-green-700 rounded-xl" type="submit" value="SUBMIT">
 </form>
 <x-footer></x-footer>
-
-@if (session('success'))
-@if (session('success'))
-<script>alert </script>
-<script>alert </script>

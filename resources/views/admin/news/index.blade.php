@@ -32,5 +32,8 @@
             </tbody>
         @endforeach
     </table>
+    <div class="m-2">
+        {{ $index->links() }}
+    </div>
 </section>
 <x-footer></x-footer>

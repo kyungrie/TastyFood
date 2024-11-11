@@ -12,7 +12,8 @@ class GalleriesController extends Controller
 {
     public function index()
     {
-        $gallery = DB::table('galleries')->get();
+
+        $gallery = DB::table('galleries')->paginate(8);
 
         return view('admin.gallery.index', ['index' => $gallery]);
     }

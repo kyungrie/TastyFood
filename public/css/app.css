@@ -696,12 +696,20 @@ video {
   grid-column: span 2 / span 2;
 }
 
+.m-10 {
+  margin: 2.5rem;
+}
+
 .m-5 {
   margin: 1.25rem;
 }
 
 .m-\[5rem\] {
   margin: 5rem;
+}
+
+.m-2 {
+  margin: 0.5rem;
 }
 
 .mx-10 {

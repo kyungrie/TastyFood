@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 class NewsController extends Controller
 {
     public function index(){
-        $news = DB::table('news')->get();
+        $news = DB::table('news')->paginate(8);
 
         return view('admin.news.index',['index'=>$news]);
     }
