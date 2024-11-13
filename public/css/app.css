@@ -1473,6 +1473,11 @@ video {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
+.bg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+
 .bg-blue-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(29 78 216 / var(--tw-bg-opacity));
@@ -1546,21 +1551,16 @@ video {
   background-color: rgb(250 204 21 / var(--tw-bg-opacity));
 }
 
-.bg-blue-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
-}
-
 .bg-cover {
   background-size: cover;
 }
 
-.fill-red-500 {
-  fill: #ef4444;
-}
-
 .fill-current {
   fill: currentColor;
+}
+
+.fill-red-500 {
+  fill: #ef4444;
 }
 
 .object-cover {

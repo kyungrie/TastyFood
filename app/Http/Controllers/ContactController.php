@@ -12,7 +12,7 @@ class ContactController extends Controller
 {
     public function index()
     {
-        $contact = DB::table('contact')->paginate(8);
+        $contact = DB::table('contact')->paginate(10);
 
         return view('admin.contact.index', ['index' => $contact]);
     }
@@ -25,12 +25,17 @@ class ContactController extends Controller
             'email' => $request->email,
             'message' => $request->message,
         ]);
+
+        session()->flash('success','Data berhasil ditambahkan!');
+        session()->flash('success','Data berhasil ditambahkan!');
         return redirect('/contact');
     }
 
     public function delete($id)
     {
         DB::table('contact')->where('id', $id)->delete();
+
+        session()->flash('success','Data berhasil dihapus!');
         return redirect('/admin/contact');
     }
 }

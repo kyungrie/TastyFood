@@ -8,6 +8,9 @@
         <a class="px-3 py-3 bg-green-600 rounded-full" href="/admin/news/create">+ Tambah Data</a>
     </div>
     <table class="w-full text-center border border-black table-auto border-3">
+        <div class="m-2">
+            {{ $index->links() }}
+        </div>
         <thead class="bg-emerald-700">
             <th class="px-4 py-2 border border-black">no</th>
             <th class="px-4 py-2 border border-black">gambar</th>
@@ -32,6 +35,17 @@
             </tbody>
         @endforeach
     </table>
+    @if (session('success'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil!',
+                text: '{{ session("success") }}',
+                showConfirmButton:false,
+                timer:1500
+            });
+        </script>
+    @endif
     <div class="m-2">
         {{ $index->links() }}
     </div>

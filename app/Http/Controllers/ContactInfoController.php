@@ -24,6 +24,8 @@ class ContactInfoController extends Controller
             'telephone' => $request->telephone,
             'location' => $request->location,
         ]);
+
+        session()->flash('success','Data berhasil ditambahkan!');
         return redirect('/contactinfo');
     }
 
@@ -38,6 +40,8 @@ class ContactInfoController extends Controller
         $contactinfo->telephone= $request->telephone;
         $contactinfo->location= $request->location;
         $contactinfo->save();
+
+        session()->flash('success','Data berhasil diperbarui!');
 	    return redirect('admin/contactinfo');
     }
 }

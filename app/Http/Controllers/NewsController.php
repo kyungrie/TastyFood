@@ -26,11 +26,15 @@ class NewsController extends Controller
             'picture'=> $newName,
             'newscontent'=> $request->newscontent,
         ]);
+
+        session()->flash('success','Data berhasil ditambahkan!');
         return redirect('/admin/news');
     }
 
     public function delete($id)  {
         DB::table('news')->where('id',$id)->delete();
+
+        session()->flash('success','Data berhasil dihapus!');
         return redirect('/admin/news');
     }
 
@@ -51,6 +55,8 @@ class NewsController extends Controller
             $news->picture=$newName;
         }
         $news->save();
+
+        session()->flash('success','Data berhasil diperbarui!');
 	    return redirect('admin/news');
     }
 }
