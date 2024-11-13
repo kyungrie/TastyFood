@@ -15,7 +15,7 @@
             <a class="inline-block p-3 font-bold text-white bg-black md:px-20 hover:scale-125" href="/about">TENTANG KAMI</a>
         </div>
         <img src="{{ asset('images/img-4-2000x2000.png') }}"
-            class="md:size-[80rem] absolute md:left-[67rem] md:-top-[15rem] size-[20rem] left-[15rem] bottom-[35rem] animate-slowspin -z-10">
+            class="md:size-[80rem] absolute md:left-[78rem] md:-top-[15rem] size-[20rem] left-[15rem] bottom-[35rem] animate-slowspin -z-10">
     </section>
 
     <section class="bg-[#ffffff] py-24">

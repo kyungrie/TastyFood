@@ -1,5 +1,5 @@
 <nav id="navbar"
-    class="flex flex-row gap-10 justify-between items-center px-5 py-4 md:justify-between md:py-8 md:px-20">
+    class="flex flex-row gap-10 justify-between items-center px-5 py-4 md:justify-between md:py-12 md:px-20">
     <h1 class="text-2xl font-bold text-white md:text-4xl">TASTY FOOD</h1>
     <ul id="nav-menu"
         class="text-sm flex flex-col px-5 py-10 md:p-0 md:flex-row justify-center items-center gap-8 absolute top-0 left-0 md:static w-full md:w-[unset] transition-all duration-300 translate-y-[-100%] md:transform-none">

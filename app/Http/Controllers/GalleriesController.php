@@ -28,12 +28,16 @@ class GalleriesController extends Controller
             'title' => $request->title,
             'picture' => $newName,
         ]);
-        return redirect('/admin/gallery')->with('success','Gambar berhasil diuploud!');
+
+        session()->flash('success','Data berhasil ditambahkan!');
+        return redirect('/admin/gallery');
     }
 
     public function delete($id)
     {
         DB::table('galleries')->where('id', $id)->delete();
+
+        session()->flash('success','Data berhasil dihapus!');
         return redirect('/admin/gallery');
     }
 
@@ -56,6 +60,8 @@ class GalleriesController extends Controller
             $gallery->picture = $newName;
         }
         $gallery->save();
+
+        session()->flash('success','Data berhasil diperbarui!');
         return redirect('admin/gallery');
     }
 }

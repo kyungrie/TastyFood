@@ -696,8 +696,8 @@ video {
   grid-column: span 2 / span 2;
 }
 
-.m-10 {
-  margin: 2.5rem;
+.m-2 {
+  margin: 0.5rem;
 }
 
 .m-5 {
@@ -706,10 +706,6 @@ video {
 
 .m-\[5rem\] {
   margin: 5rem;
-}
-
-.m-2 {
-  margin: 0.5rem;
 }
 
 .mx-10 {
@@ -1550,12 +1546,21 @@ video {
   background-color: rgb(250 204 21 / var(--tw-bg-opacity));
 }
 
+.bg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+
 .bg-cover {
   background-size: cover;
 }
 
 .fill-red-500 {
   fill: #ef4444;
+}
+
+.fill-current {
+  fill: currentColor;
 }
 
 .object-cover {
@@ -2267,8 +2272,8 @@ video {
     left: 1.25rem;
   }
 
-  .md\:left-\[67rem\] {
-    left: 67rem;
+  .md\:left-\[78rem\] {
+    left: 78rem;
   }
 
   .md\:right-5 {
@@ -2534,6 +2539,11 @@ video {
   .md\:px-\[3rem\] {
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+
+  .md\:py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 
   .md\:py-2 {
