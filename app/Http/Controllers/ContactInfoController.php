@@ -26,7 +26,7 @@ class ContactInfoController extends Controller
         ]);
 
         session()->flash('success','Data berhasil ditambahkan!');
-        return redirect('/contactinfo');
+        return redirect('admin/contactinfo');
     }
 
     public function edit(Request $req){

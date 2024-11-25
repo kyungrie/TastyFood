@@ -704,6 +704,10 @@ video {
   margin: 1.25rem;
 }
 
+.m-\[3rem\] {
+  margin: 3rem;
+}
+
 .m-\[5rem\] {
   margin: 5rem;
 }
@@ -741,6 +745,11 @@ video {
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
+}
+
+.mx-\[3rem\] {
+  margin-left: 3rem;
+  margin-right: 3rem;
 }
 
 .-ml-px {
@@ -915,16 +924,6 @@ video {
 .size-3 {
   width: 0.75rem;
   height: 0.75rem;
-}
-
-.size-8 {
-  width: 2rem;
-  height: 2rem;
-}
-
-.size-\[0\.5rem\] {
-  width: 0.5rem;
-  height: 0.5rem;
 }
 
 .size-\[20rem\] {
@@ -1473,11 +1472,6 @@ video {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-.bg-blue-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
-}
-
 .bg-blue-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(29 78 216 / var(--tw-bg-opacity));
@@ -1500,11 +1494,6 @@ video {
 
 .bg-gray-200\/80 {
   background-color: rgb(229 231 235 / 0.8);
-}
-
-.bg-gray-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 
 .bg-gray-500 {
@@ -1553,10 +1542,6 @@ video {
 
 .bg-cover {
   background-size: cover;
-}
-
-.fill-current {
-  fill: currentColor;
 }
 
 .fill-red-500 {
@@ -1698,6 +1683,11 @@ video {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+
+.px-\[3rem\] {
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 .pb-12 {
@@ -2061,8 +2051,9 @@ video {
   grid-row: span 1 / span 1;
 }
 
-.hover\:rotate-\[360deg\]:hover {
-  --tw-rotate: 360deg;
+.hover\:scale-105:hover {
+  --tw-scale-x: 1.05;
+  --tw-scale-y: 1.05;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -2075,12 +2066,6 @@ video {
 .hover\:scale-125:hover {
   --tw-scale-x: 1.25;
   --tw-scale-y: 1.25;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.hover\:scale-150:hover {
-  --tw-scale-x: 1.5;
-  --tw-scale-y: 1.5;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 

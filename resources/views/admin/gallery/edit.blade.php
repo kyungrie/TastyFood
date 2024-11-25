@@ -6,11 +6,28 @@
     @csrf
     <input type="hidden" name="id" value="{{ $galleries->id }}">
     <label for="">Title</label>
+    @error('title')
+    <div class="text-red-600">{{ $message }}</div>
+    @enderror
     <input type="text" name="title" value="{{ $galleries->title }}"
         class="block px-2 py-1.5 w-full text-gray-600 rounded-md border-2 form-input placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
     <label for="">News Picture</label>
+    @error('picture')
+    <div class="text-red-600">{{ $message }}</div>
+    @enderror
     <input type="file" name="picture" value="{{ $galleries->picture }}"
         class="block px-2 py-1.5 w-full text-gray-600 rounded-md border-2 form-input placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
     <input class="py-2 font-bold text-center text-white bg-green-700 rounded-xl" type="submit" value="SUBMIT">
+
+    @if($errors->any())
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Terjadi kesalahan dalam pengisian data.',
+            footer: '<ul>@foreach($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul>'
+        });
+    </script>
+    @endif
 </form>
 <x-footer></x-footer>

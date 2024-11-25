@@ -29,8 +29,7 @@
                         href="/admin/gallery/edit?id={{ $g->id }}">Update</a>
                     <br>
                     <br>
-                    <a class="px-5 py-1 text-xl bg-red-600 rounded-xl"
-                        href="/admin/gallery/delete/{{ $g->id }}" onclick="return confirm('Are you sure want to delete this item?')">Delete</a>
+                    <a class="px-5 py-1 text-xl bg-red-600 rounded-xl" role="button" onclick="deleteConfirmation(event,'/admin/gallery/delete/{{ $g->id }}')">Delete</a>
                 </td>
             </tbody>
         @endforeach
@@ -46,6 +45,26 @@
         });
     </script>
     @endif
+    <script>
+        function deleteConfirmation(event, url) {
+            event.preventDefault();
+
+            Swal.fire({
+                title: 'Apakah Anda yakin?',
+                text: "Data ini akan dihapus secara permanen!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya, hapus!',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = url;
+                }
+            });
+        }
+    </script>
     <div class="m-2">
         {{ $index->links() }}
     </div>

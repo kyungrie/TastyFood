@@ -8,15 +8,15 @@
             @csrf
             <div class="grid grid-cols-1 gap-5">
                 <input type="text" placeholder="Subject" name="subject" id="subject"
-                    class="block px-2 py-2 w-full text-gray-600 rounded-md border-2 form-input placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    class="block px-2 py-2 w-full text-gray-600 rounded-md border-2 form-input placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
                 <input type="text" placeholder="Name" name="name" id="name" autocomplete="given-name"
-                    class="block px-2 py-2 w-full text-gray-600 rounded-md border-2 form-input placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    class="block px-2 py-2 w-full text-gray-600 rounded-md border-2 form-input placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
                 <input type="email" placeholder="E-mail" name="email" id="email" autocomplete="email"
-                    class="block px-2 py-2 w-full text-gray-600 rounded-md border-2 form-input placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    class="block px-2 py-2 w-full text-gray-600 rounded-md border-2 form-input placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
             </div>
 
                 <textarea placeholder="Message" name="message" id="message"
-                    class="block px-2 text-gray-600 rounded-md border-2 resize-none form-textarea placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+                    class="block px-2 text-gray-600 rounded-md border-2 resize-none form-textarea placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required></textarea>
 
                 <div class="flex flex-col col-span-2">
                     <input class="py-3 font-bold text-center text-white bg-black rounded-xl hover:scale-110" type="submit" value="SUBMIT">

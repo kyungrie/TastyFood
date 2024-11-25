@@ -27,7 +27,6 @@ class ContactController extends Controller
         ]);
 
         session()->flash('success','Data berhasil ditambahkan!');
-        session()->flash('success','Data berhasil ditambahkan!');
         return redirect('/contact');
     }
 

@@ -37,33 +37,37 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/news', function () {
-    $news = News::all();
-    $news_count = $news->count();
-    return view('news', [
-        'news' => $news->random($news_count > 8 ? 8 : $news_count)->collect(),
-    ]);
+// Route::get('/news', function () {
+//     $news = News::all();
+//     $news_count = $news->count();
+//     return view('news', [
+//         'news' => $news->random($news_count > 8 ? 8 : $news_count)->collect(),
+//     ]);
 
-    return view('news');
-});
+//     return view('news');
+// });
 
-Route::get('/gallery', function () {
-    $pictures = File::files(public_path() . '/gallery-picture');
-    $pictures_count = count($pictures);
-    $rand_pictures = [];
-    if ($pictures_count < 13) {
-        $rand_pictures = $pictures;
-    } else {
-        $keys = array_rand($pictures, $pictures_count > 6 ? 6 : $pictures_count);
-        foreach ($keys as $key) {
-            $rand_pictures[] = $pictures[$key];
-        }
-    }
+Route::get('/news', [NewsController::class, 'view']);
 
-    return view('gallery', [
-        'pictures' => $rand_pictures,
-    ]);
-});
+Route::get('/gallery', [GalleriesController::class, 'view']);
+
+// Route::get('/gallery', function () {
+//     $pictures = File::files(public_path() . '/gallery-picture');
+//     $pictures_count = count($pictures);
+//     $rand_pictures = [];
+//     if ($pictures_count < 13) {
+//         $rand_pictures = $pictures;
+//     } else {
+//         $keys = array_rand($pictures, $pictures_count > 6 ? 6 : $pictures_count);
+//         foreach ($keys as $key) {
+//             $rand_pictures[] = $pictures[$key];
+//         }
+//     }
+
+//     return view('gallery', [
+//         'pictures' => $rand_pictures,
+//     ]);
+// });
 
 Route::get('/contact', function () {
     $contactinfo = ContactInfo::first();

@@ -20,8 +20,8 @@
                         class="px-5 py-2 w-full text-lg text-white bg-blue-700 rounded-xl duration-300 hover:bg-blue-500 hover:text-black">
                         Login
                     </button>
-                    <p class="mt-5 text-sm text-center">Didn't have any account yet? <a href="/register"
-                            class="text-blue-500">Resgister</a></p>
+                    {{-- <p class="mt-5 text-sm text-center">Didn't have any account yet? <a href="/register"
+                            class="text-blue-500">Resgister</a></p> --}}
                 </label>
             </form>
         </div>

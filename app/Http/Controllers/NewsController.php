@@ -16,7 +16,20 @@ class NewsController extends Controller
         return view('admin.news.index',['index'=>$news]);
     }
 
+    public function view(){
+        $news = DB::table('news')->paginate(8);
+
+        return view('news',['index'=>$news]);
+    }
+
     public function insert(Request $request){
+
+        $validated = $request->validate([
+            'title' => 'required|string|max:255', // Validasi judul
+            'newscontent' => 'required|string', // Validasi konten berita
+            'picture' => 'required|image|mimes:jpeg,png,jpg,gif,svg', // Validasi gambar
+        ]);
+
         $newName = $request->picture->hashName();
         $pictureFolder = public_path() . '/news-picture';
         $request->picture->move($pictureFolder, $newName);
@@ -44,9 +57,17 @@ class NewsController extends Controller
     }
 
     public function update(Request $request){
+
+        $validated = $request->validate([
+            'title' => 'required|string|max:255', // Validasi judul
+            'newscontent' => 'required|string', // Validasi konten berita
+            'picture' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Validasi gambar
+        ]);
+
         $news = News::find($request->id);
         $news->title= $request->title;
         $news->newscontent= $request->newscontent;
+
         if ($request-> has('picture')) {
             $newName = $request->picture->hashName();
             $pictureFolder = public_path() . '/news-picture';

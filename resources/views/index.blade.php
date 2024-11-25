@@ -52,9 +52,20 @@
         <h1 class="my-5 text-5xl font-bold text-center">BERITA KAMI</h1>
         @if (count($news) > 0)
         <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-2 md:grid-rows-1 gap-5 h-[220vh] md:h-[100vh]">
-            <x-news-card src="{{ asset('news-picture/' . $news[0]->picture) }}" title="{{ $news[0]->title }}">
+            {{-- <x-news-card src="{{ asset('news-picture/' . $news[0]->picture) }}" title="{{ $news[0]->title }}">
                 {{ $news[0]->newscontent }}
-            </x-news-card>
+            </x-news-card> --}}
+            <div class="overflow-hidden bg-white rounded-xl shadow-2xl">
+                <img src="{{ asset('news-picture/' . $news[0]->picture) }}" alt="card image" class="h-[50%] w-[100%] object-cover">
+                <div class="flex flex-col h-[50%] p-5">
+                    <h1 class="text-xl font-bold text-center">{{ $news[0]->title }}</h1>
+                    <div class="h-[50%] text-sm text-gray-500 overflow-y-hidden"> {{ $news[0]->newscontent }} </div>
+                    <div class="flex flex-row justify-between items-center mt-auto">
+                        <a href="#" class="text-sm text-yellow-600">Lihat Selengkapnya</a>
+                        <i class="text-4xl text-gray-500 nf nf-md-dots_horizontal hover:scale-125"></i>
+                    </div>
+                </div>
+            </div>
             <div class="grid grid-cols-2 grid-rows-1 gap-5 md:grid-rows-2">
                 @for ($i = 1; $i < count($news); $i++)
                     <x-news-card src="{{ asset('news-picture/' . $news[$i]->picture) }}"

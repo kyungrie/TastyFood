@@ -18,26 +18,46 @@ class GalleriesController extends Controller
         return view('admin.gallery.index', ['index' => $gallery]);
     }
 
+    public function view()
+    {
+        $gallery = DB::table('galleries')->paginate(9);
+
+        return view('gallery', ['index' => $gallery]);
+    }
+
     public function insert(Request $request)
     {
-        $newName = $request->picture->hashName();
-        $pictureFolder = public_path() . '/gallery-picture';
-        $request->picture->move($pictureFolder, $newName);
-
-        DB::table('galleries')->insert([
-            'title' => $request->title,
-            'picture' => $newName,
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',  // Validasi judul
+            'picture' => 'required|image|mimes:jpeg,png,jpg,gif,svg', // Validasi gambar
         ]);
 
-        session()->flash('success','Data berhasil ditambahkan!');
+       try {
+           $newName = $request->picture->hashName();
+           $pictureFolder = public_path() . '/gallery-picture';
+           $request->picture->move($pictureFolder, $newName);
+
+           DB::table('galleries')->insert([
+               'title' => $request->title,
+               'picture' => $newName,
+           ]);
+
+           session()->flash('success','Data berhasil ditambahkan!');
+       } catch(\Exception $e) {
+         session()->flash('error','Data gagal ditambahkan');
+       }
         return redirect('/admin/gallery');
     }
 
     public function delete($id)
     {
-        DB::table('galleries')->where('id', $id)->delete();
+        try {
+            DB::table('galleries')->where('id', $id)->delete();
 
-        session()->flash('success','Data berhasil dihapus!');
+            session()->flash('success','Data berhasil dihapus!');
+        } catch(\Exception $e){
+            session()->flash('error','Data gagal dihapus');
+        }
         return redirect('/admin/gallery');
     }
 
@@ -49,19 +69,28 @@ class GalleriesController extends Controller
 
     public function update(Request $request)
     {
-        $gallery = Galleries::find($request->id);
-        $gallery->title = $request->title;
-        $gallery->picture = $request->picture;
-        if ($request->has('picture')) {
-            $newName = $request->picture->hashName();
-            $pictureFolder = public_path() . '/gallery-picture';
-            $request->picture->move($pictureFolder, $newName);
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',  // Validasi judul
+            'picture' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Validasi gambar
+        ]);
 
-            $gallery->picture = $newName;
+        try {
+            $gallery = Galleries::find($request->id);
+            $gallery->title = $request->title;
+            $gallery->picture = $request->picture;
+            if ($request->has('picture')) {
+                $newName = $request->picture->hashName();
+                $pictureFolder = public_path() . '/gallery-picture';
+                $request->picture->move($pictureFolder, $newName);
+
+                $gallery->picture = $newName;
+            }
+            $gallery->save();
+
+            session()->flash('success','Data berhasil diperbarui!');
+        } catch(\Exception $e) {
+            session()->flash('error','Data gagal diperbarui!');
         }
-        $gallery->save();
-
-        session()->flash('success','Data berhasil diperbarui!');
         return redirect('admin/gallery');
     }
 }
